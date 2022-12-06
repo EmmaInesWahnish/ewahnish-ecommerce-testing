@@ -1,0 +1,358 @@
+.asBody {
+    margin:0px;
+    color: darkblue;
+    font-size: 1.06em;
+  }
+  
+  .logo {
+    color: darkblue;
+    font-size: 2.5em;
+  }
+  
+  .cart {
+    color: darkblue;
+    font-size: 1.5em;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  
+  .select2-selection__rendered {
+    line-height: auto !important;
+  }
+  
+  .select2-container .select2-selection--single {
+    height: auto !important;
+  }
+  
+  .select2-selection__arrow {
+    height: auto !important;
+  }
+  
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding: 1em;
+    /* Location of the box */
+    width: 80%;
+    /* Full width */
+    height: 900%;
+    /* Full height */
+    overflow: scroll;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5px;
+    padding: auto;
+    border: 3px solid #2d85e5;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .overClass {
+    overflow: scroll;
+  }
+  
+  .selected {
+    background-color: lightblue;
+  }
+  
+  .item3 {
+    display: block;
+    font-size: 1em;
+    margin: 0;
+    padding: 1em;
+    border: #12355b;
+    font-family: trebuchet;
+    color: lightslategray;
+    /*background-image: linear-gradient(to right, rgba(45, 133, 229, 0), #dc3545); }*/
+    background-image: linear-gradient(to right, rgba(45, 133, 229, 0), rgb(3, 3, 63));
+  }
+  
+  .pictures {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+  }
+  
+  .flex-container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:flex-start;
+    justify-items: center;
+    text-align: center;
+    padding:0%;
+  }
+
+  .flex-container-button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:flex-end;
+    justify-items: center;
+    text-align: center;
+    padding:1px;
+    margin:0%
+  }
+
+  .flex-container-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content:flex-end;
+    justify-items: center;
+    text-align: center;
+    padding:1px;
+    margin:0%
+  }
+
+  .flex-container-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    justify-items:center;
+    justify-self: center;
+  }
+  
+  .flex-container-buttons{
+    justify-self: center;
+    justify-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    border-style:ridge;
+    height:fit-content;
+    width:100%;
+    padding:0%;
+    margin:0%;
+    justify-content: space-between;
+  }
+  
+  .flex-modal-container{
+    justify-items: center;
+    width:60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  }
+  
+  .flex-modal-form{
+    justify-items: center;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .flex-modal-buttons{
+    justify-items: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  .flex-container-nav{
+    flex-direction: row;
+    justify-self: center;
+    justify-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .flex-container-nav {
+      flex-direction: column;
+    }
+  }
+  
+  .flex-item {
+    align-self: center;
+  }
+  
+  .center {
+    margin: auto;
+    max-width: 400px;
+  }
+  
+  .lessWidth {
+    width: 20%;
+  }
+  
+  /*animación del spinner*/
+  img#circle {
+    animation-name: iTurn;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes iTurn {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(36deg);
+    }
+    20% {
+      transform: rotate(72deg);
+    }
+    30% {
+      transform: rotate(108deg);
+    }
+    40% {
+      transform: rotate(144deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    60% {
+      transform: rotate(216deg);
+    }
+    70% {
+      transform: rotate(252deg);
+    }
+    80% {
+      transform: rotate(288deg);
+    }
+    90% {
+      transform: rotate(324deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .big_id {
+    font-size: x-small;
+    width:250px;
+    text-overflow: ellipsis;
+    overflow:hidden;
+  }
+  
+  button {
+    font-size: 1.5em;
+    height:auto;
+    width:140px;
+  }
+  
+  .product {
+    width:300px;
+    align-items: center;
+    border-style:ridge;
+    border-color: lightgray;
+  }
+  
+  .roundButton {
+    background-color: transparent;
+    border: none;
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    display:inline-block;
+    margin:4px 2px;
+    cursor:pointer;
+    border-radius: 50%;
+    width: 30px;
+    height:30px;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .brick {
+    color: firebrick;
+  }
+  
+  .purple {
+    color: purple;
+  }
+  
+  .paginationBttns{
+    padding: 2px;
+    width: 85%;
+    height: 16px;
+    list-style:none;
+    display:flex;
+    color:black;
+    justify-content: center;
+  }
+  
+  .paginationBttns a{
+    padding: 2px;
+    margin: 4px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover {
+    color:white;
+    background-color: #007bff;
+  }
+  
+  .paginationActive a {
+    color: white;
+    background-color:#007bff;
+  }
+  
+  joker {
+    padding:10px;
+    display:block;
+    background-color: white;
+    height:10px;
+    width:10px;
+  }
+
+  .card {
+    cursor: pointer;
+  }
+
+  .card:hover {
+    box-shadow:rgba(0, 0, 75, 0.45) 0px 25px 20px -20px;
+    transform: translate3d(0, -4px, 0);
+  }

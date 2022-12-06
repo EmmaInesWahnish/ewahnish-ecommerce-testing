@@ -1,0 +1,26 @@
+[
+   {
+      "user_id": "6346f3c4912b7f52caec457a",
+      "timestamp": 1667475735516,
+      "productos": [
+         {
+            "id": 2,
+            "timestamp": 1656710054455,
+            "nombre": "Maquina de Pintar",
+            "descripcion": "Maquina de pintar con compresor",
+            "codigo": "NN-00-01",
+            "foto": "/images/maquina-de-pintar.jpeg",
+            "precio": 5880,
+            "stock": 50,
+            "cantidad": 1
+         }
+      ],
+      "id": 1
+   },
+   {
+      "user_id": "6346f3c4912b7f52caec457a",
+      "timestamp": 1667478224711,
+      "productos": [],
+      "id": 2
+   }
+]

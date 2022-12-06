@@ -1,0 +1,1 @@
+{"_id":{"$oid":"6378e4acd9ae8be81ac597b7"},"timestamp":{"$date":{"$numberLong":"1668816000000"}},"nombre":"Llaves combinadas","descripcion":"Llaves combinadas acodadas","codigo":"LC-00-02","foto":"/images/llaves-combinadas.jpeg","precio":{"$numberInt":"12000"},"stock":{"$numberInt":"20"},"__v":{"$numberInt":"0"}}
