@@ -19,24 +19,28 @@ import { Server } from "socket.io";
 import { __dirname } from './utils.js';
 import cluster from 'cluster';
 import { cpus } from 'os';
+import winston from 'winston';
+import logConfiguration from './js/gralLogger.js'
 
 
 const app = express();
+
+const ilogger = winston.createLogger(logConfiguration);
 
 const modeCluster = config.server.MODE;
 
 if (modeCluster === 'CLUSTER' && cluster.isPrimary) {
     const numCPUs = cpus().length
 
-    console.log(`Número de procesadores: ${numCPUs}`)
-    console.log(`PID MASTER ${process.pid}`)
+    ilogger.info(`Número de procesadores: ${numCPUs}`)
+    ilogger.info(`PID MASTER ${process.pid}`)
 
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork()
     }
 
     cluster.on('exit', worker => {
-        console.log('Worker', worker.process.pid, 'died', new Date().toLocaleString())
+        ilogger.error('Worker', worker.process.pid, 'died', new Date().toLocaleString())
         cluster.fork()
     })
 }
