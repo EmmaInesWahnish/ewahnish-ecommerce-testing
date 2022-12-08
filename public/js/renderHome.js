@@ -51,7 +51,7 @@ const renderHome = () => {
     fetch(homeRoute, requestOptions)
         .then(result => result.json())
         .then(json => session = json)
-        .finally(() => {
+        .finally(async () => {
             if (session.user) {
                 if (session.user.avatar !== null && session.user.avatar !== "" && session.user.avatar) {
                     user_avatar = session.user.avatar;
@@ -74,7 +74,7 @@ const renderHome = () => {
                             needAvatar:false
                         }
                         LocalStorageService.setItem("newUser", newUser);
-                        modifyUserAvatar(session.user.email)
+                        await modifyUserAvatar(session.user.email)
                     }
                 }
             }

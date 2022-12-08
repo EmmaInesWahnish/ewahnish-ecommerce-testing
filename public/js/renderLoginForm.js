@@ -87,7 +87,7 @@ const renderLoginForm = () => {
         fetch(loginRoute, requestOptions)
             .then(result => result.json())
             .then(json => theStatus = json)
-            .finally(() => {
+            .finally(async () => {
                 if (theStatus.status === 'success') {
                     LocalStorageService.setItem("token", theStatus.data)
                     whichUser = theStatus.payload.id;
@@ -112,10 +112,10 @@ const renderLoginForm = () => {
                         }
                         LocalStorageService.setItem("newUser", newUser);
                         try{
-                            renderModalUploadFile('picture');
+                            await renderModalUploadFile('picture');
                         }
                         catch (error) {
-                            console.log('No se pudo crear el carrito')
+                            console.log('No se pudo guardar el avatar')
                         }
                     }
                     else {

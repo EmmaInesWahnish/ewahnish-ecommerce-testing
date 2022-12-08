@@ -77,6 +77,22 @@ const renderregisterForm = async () => {
         let data = new FormData(form);
         let obj = {};
         data.forEach((value, key) => obj[key] = value);
+
+        const emailRoute = '/register_email';
+
+        console.log("Object ",obj)
+
+        const requestOptionsMail = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(obj),
+        };
+
+        fetch(emailRoute, requestOptionsMail)
+            .then(async res => {
+                await res.json();
+            })
+
         const registerRoute = '/api/sessions/register'
 
         const requestOptions = {

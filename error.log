@@ -1,0 +1,3 @@
+{"level":"error","message":"404 - ruta no encontrada /favicon.ico","service":"user-service","timestamp":"2022-12-08T16:59:31.467Z"}
+{"level":"error","message":"404 - ruta no encontrada /email_register","service":"user-service","timestamp":"2022-12-08T18:13:26.313Z"}
+{"level":"error","message":"404 - ruta no encontrada /email_register","service":"user-service","timestamp":"2022-12-08T18:17:38.416Z"}
