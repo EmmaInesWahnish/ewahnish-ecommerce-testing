@@ -22,6 +22,7 @@ const config = {
   persistences:DBS,
   server: {
     PORT: process.env.PORT ?? DEV_PORT,
+    MODE: process.env.MODE,
     routes: {
       base: "/api",
       productos:"/api/productos",
