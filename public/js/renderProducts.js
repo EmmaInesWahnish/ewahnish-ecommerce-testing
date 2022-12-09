@@ -11,7 +11,6 @@ import cartInfo from './cartInfo.js';
 import getAllCarts from './getAllCarts.js';
 import build_header from './getHeader.js';
 import { LocalStorageService } from './localStorageService.js';
-import getImage from './getImage.js';
 import getAndModifyOneProduct from './getAndModifyOneProduct.js';
 
 let array = [];

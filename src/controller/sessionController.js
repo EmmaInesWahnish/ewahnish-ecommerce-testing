@@ -61,6 +61,7 @@ export const sessionInfo = (req, res) => {
 }
 
 export const modifyUserAvatar = async (req, res) => {
+    console.log("In modify avatar >>>> ",req.body);
     let auxurl = req.body.auxurl;
     let email = req.body.user_email;
     let avatar = {

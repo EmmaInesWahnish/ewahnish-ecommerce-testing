@@ -15,9 +15,9 @@ const getImage = async () => {
     fetch(imageRoute, requestOptions)
     .then(res => res.json())
     .then(data  => {
-        console.log(data)
+        console.log(data);
         LocalStorageService.setItem("image",data.response[0].auxurl);
-        return data
+        return data.response[0].auxurl;
     })
     .catch(error => {
         console.log('Se produjo el siguiente error: ', error);    

@@ -26,7 +26,7 @@ const modifyOneProduct = (modifiedProduct) => {
                     showOneProduct(productId);
                 }
             } else {
-                alert('Modificación exitosa');
+                console.log("la data",data);
                 let productId = modifiedProduct.id;
                 showOneProduct(productId);
             }

@@ -1,6 +1,5 @@
 import showOneProduct from './showOneProduct.js';
 import build_header from './getHeader.js';
-import getImage from './getImage.js';
 import { LocalStorageService } from './localStorageService.js'
 
 const addOneProduct = async (addedProduct) => {

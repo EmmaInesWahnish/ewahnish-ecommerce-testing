@@ -1,5 +1,6 @@
 import renderHome from "./renderHome.js";
 import renderLoginForm from './renderLoginForm.js';
+import sendRegisterEmail from './sendRegisterEmail.js';
 import { LocalStorageService } from "./localStorageService.js";
 const renderregisterForm = async () => {
 
@@ -78,20 +79,13 @@ const renderregisterForm = async () => {
         let obj = {};
         data.forEach((value, key) => obj[key] = value);
 
-        const emailRoute = '/register_email';
-
-        console.log("Object ",obj)
+        console.log("Object ", obj)
 
         const requestOptionsMail = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(obj),
         };
-
-        fetch(emailRoute, requestOptionsMail)
-            .then(async res => {
-                await res.json();
-            })
 
         const registerRoute = '/api/sessions/register'
 
@@ -104,16 +98,18 @@ const renderregisterForm = async () => {
         fetch(registerRoute, requestOptions)
             .then(result => result.json())
             .then(json => console.log(json))
-            .finally(() => {
+            .finally(async () => {
                 let newUser = {
-                    isNew:true,
+                    isNew: true,
                     user_email: obj.email,
                     needAvatar: true
                 }
-                LocalStorageService.setItem("newUser",newUser)
+                LocalStorageService.setItem("newUser", newUser)
+                await sendRegisterEmail(obj);
                 renderLoginForm();
             })
             .catch(err => console.log(err));
+
     })
 
 }
