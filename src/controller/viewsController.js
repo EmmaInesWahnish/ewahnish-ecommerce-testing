@@ -29,8 +29,8 @@ export const viewsEmail = async (req, res) => {
     const myInfo = req.body;
     const destEmail = req.session.user.email;
     const deliveryAddress = myInfo.delivery_address;
-    const first_name = myInfo.first_name;
-    const last_name = myInfo.last_name;
+    const name = myInfo.name;
+    const phone = myInfo.phone;
     const productos = myInfo.order[0].productos;
     const orderNumber = myInfo.order[0].id;
     const attachment = {
@@ -48,7 +48,7 @@ export const viewsEmail = async (req, res) => {
         d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm-6.202-4.751 1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.49 4.49 0 0 1-1.592-.29L4.747 14.2a7.031 7.031 0 0 1-2.949-2.951ZM12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z" />
     </svg> Todo en Herramientas - Ferretería Industrial</h3>
   <div>
-    <strong>Orden de compra Nro ${orderNumber} a nombre de ${first_name} ${last_name}</strong>
+    <strong>Orden de compra Nro ${orderNumber} a nombre de ${name}</strong>
     </div>
     <br>`
 
@@ -109,8 +109,8 @@ export const viewsInfo = (req, res) => {
 export const viewsRegisterEmail = async (req, res) => {
     const myInfo = req.body;
     const destEmail = myInfo.email;
-    const first_name = myInfo.first_name;
-    const last_name = myInfo.last_name;
+    const name = myInfo.name;
+    const phone = myInfo.phone;
     const attachment = {
         path: process.cwd() + '/public/uploads/generic-avatar.png'
     }
@@ -125,7 +125,7 @@ export const viewsRegisterEmail = async (req, res) => {
         d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm-6.202-4.751 1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.49 4.49 0 0 1-1.592-.29L4.747 14.2a7.031 7.031 0 0 1-2.949-2.951ZM12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z" />
     </svg><h3>Todo en Herramientas - Ferretería Industrial</h3>
   <div>
-    <strong>Gracias por registrarse, ${first_name} ${last_name}</strong>
+    <strong>Gracias por registrarse, ${name}</strong>
     </div>
     <br>`
 
@@ -133,6 +133,6 @@ export const viewsRegisterEmail = async (req, res) => {
     <br>
     <hr>`;
 
-    await sendMailGmail(destEmail, myHTML, `Registro de Usuario  ${first_name} ${last_name}`, attachment)
+    await sendMailGmail(destEmail, myHTML, `Registro de Usuario  ${name}`, attachment)
 
 }

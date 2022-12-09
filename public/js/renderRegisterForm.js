@@ -1,7 +1,8 @@
-import renderHome from "./renderHome.js";
 import renderLoginForm from './renderLoginForm.js';
 import sendRegisterEmail from './sendRegisterEmail.js';
 import { LocalStorageService } from "./localStorageService.js";
+import passwordMatch from './passwordMatch.js';
+
 const renderregisterForm = async () => {
 
     document.getElementById('activeCart').innerHTML = "";
@@ -30,6 +31,7 @@ const renderregisterForm = async () => {
 
     let picture = 'picture';
 
+
     hide(homePage)
 
     const registerUser = document.getElementById('register');
@@ -43,23 +45,28 @@ const renderregisterForm = async () => {
         <label for="email"><b>Email</b></label>
         <input id="email" class="form-control" type="email" name="email">
     </div>
+    <div id="check">
     <div class="form-group">
-        <label for="password"><b>Password</b></label>
-        <input id="password" class="form-control" type="password" name="password">
+        <label for="password1"><b>Password</b></label>
+        <input id="password1" class="form-control" type="password" name="password1">
+    </div>
+    <div class="form-group">
+        <label for="password2"><b>Reingresar Password</b></label>
+        <input id="password2" class="form-control" type="password" name="password2">
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="name"><b>Nombre</b></label>
+        <input id="name" class="form-control" type="text" name="name">
     </div>
 
     <div class="form-group">
-        <label for="first_name"><b>First Name</b></label>
-        <input id="first_name" class="form-control" type="text" name="first_name">
+        <label for="phone"><b>Telefono</b></label>
+        <input id="phone" class="form-control" type="text" name="last_name">
     </div>
 
     <div class="form-group">
-        <label for="last_name"><b>Last Name</b></label>
-        <input id="last_name" class="form-control" type="text" name="last_name">
-    </div>
-
-    <div class="form-group">
-        <label for="age"><b>Age</b></label>
+        <label for="age"><b>Edad</b></label>
         <input id="age" class="form-control" type="number" name="age">
     </div>
 
@@ -72,20 +79,32 @@ const renderregisterForm = async () => {
 
     const form = document.getElementById('registerForm');
 
+    let password1 = document.getElementById("password1");
+
+    let password2 = document.getElementById("password2")
+
+    let validated = false;
+
+    password1.addEventListener('change', function () {
+        let password1 = document.getElementById("password1").value;
+        let password2 = document.getElementById("password2").value;
+        validated = passwordMatch(password1, password2);
+    })
+
+    password2.addEventListener('change', function () {
+        let password1 = document.getElementById("password1").value;
+        let password2 = document.getElementById("password2").value;
+        validated = passwordMatch(password1, password2);
+    })
+
     form.addEventListener('submit', evt => {
         evt.preventDefault();
-
+        if(validated){
         let data = new FormData(form);
         let obj = {};
         data.forEach((value, key) => obj[key] = value);
 
         console.log("Object ", obj)
-
-        const requestOptionsMail = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(obj),
-        };
 
         const registerRoute = '/api/sessions/register'
 
@@ -109,7 +128,10 @@ const renderregisterForm = async () => {
                 renderLoginForm();
             })
             .catch(err => console.log(err));
-
+        }
+        else {
+            alert("Las claves no coinciden")
+        }
     })
 
 }

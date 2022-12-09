@@ -12,14 +12,14 @@ import {
 const whichDb = config.envs.SELECTED_DB;
 
 export const ordersGetAll = async (req, res) => {
-    let user_fname = req.session.user.first_name;
-    let user_lname = req.session.user.last_name;
+    let user_name = req.session.user.name;
+    let user_phone = req.session.user.phone;
     try {
         const order = await getAllOrders();
         res.json({
             message: 'Ordenes ',
-            user_fname: user_fname,
-            user_lname: user_lname,
+            user_name: user_name,
+            user_phone: user_phone,
             order: order,
             whichDb: whichDb
         });
@@ -34,16 +34,16 @@ export const ordersGetAll = async (req, res) => {
 
 export const ordersGetOneById = async (req, res) => {
     let id = req.params.id;
-    let user_fname = req.session.user.first_name;
-    let user_lname = req.session.user.last_name;
+    let user_name = req.session.user.name;
+    let user_phone = req.session.user.phone;
     try {
         const order = await getOrdersById(id);
         console.log("Order ", order)
         if (order != undefined) {
             res.json({
                 message: 'orden encontrada',
-                user_fname: user_fname,
-                user_lname: user_lname,
+                user_name: user_name,
+                user_phone: user_phone,
                 order: order,
                 whichDb: whichDb
             })

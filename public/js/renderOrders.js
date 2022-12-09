@@ -23,9 +23,9 @@ const renderOrders = (orderNumber, user_cart) => {
         elem.style.display = 'none';
     };
 
-    let first_name = '';
+    let name = '';
 
-    let last_name = '';
+    let phone = '';
 
     let theAddress = document.getElementById('theAddress').value;
 
@@ -46,8 +46,8 @@ const renderOrders = (orderNumber, user_cart) => {
 
                 const whichDb = data.whichDb;
 
-                first_name = data.user_fname;
-                last_name = data.user_lname;
+                name = data.user_name;
+                phone = data.user_phone;
 
                 let productos = []
 
@@ -77,7 +77,7 @@ const renderOrders = (orderNumber, user_cart) => {
 
                 const cliente = document.getElementById('cliente');
 
-                cliente.innerHTML = `A nombre de ${first_name} ${last_name}`;
+                cliente.innerHTML = `A nombre de ${name}`;
 
                 const tableHead = document.createElement('tr');
 
@@ -202,8 +202,8 @@ const renderOrders = (orderNumber, user_cart) => {
 
         let myOrder = {
             delivery_address: theAddress,
-            first_name: first_name,
-            last_name: last_name,
+            name: name,
+            phone: phone,
             order: order
         };
 

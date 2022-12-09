@@ -27,8 +27,6 @@ const renderHome = () => {
 
     let cartId = '';
 
-    let avatar = ''
-
     let user_avatar = '/uploads/generic-avatar.jpg';
 
     let user_message = 'Si desea personalizar su avatar puede utilizar Upload Avatar en la barra de menu'
@@ -60,13 +58,13 @@ const renderHome = () => {
                     user_message = '';
                 }
                 show(homePage)
-                document.getElementById('welcome').innerHTML = `Te damos la bienvenida ${session.user.first_name}! 👋 <p>${user_message}</p>`;
+                document.getElementById('welcome').innerHTML = `Te damos la bienvenida ${session.user.name}! 👋 <p>${user_message}</p>`;
                 document.getElementById('email').value = session.user.email;
-                document.getElementById('first_name').value = session.user.first_name;
-                document.getElementById('last_name').value = session.user.last_name;
+                document.getElementById('name').value = session.user.name;
+                document.getElementById('phone').value = session.user.phone;
                 document.getElementById('avatar').value = session.user.avatar;
                 avatar = session.user.avatar;
-                user_avatar = document.getElementById('user_avatar');
+                user_avatar = document.getElementById('user_avatar').value;
                 if (newUser.isNew != null) {
                     if ((newUser.needAvatar === 'recover')) {
                         let newUser = {
@@ -78,7 +76,7 @@ const renderHome = () => {
                         await modifyAvatar(session.user.email)
                     }
                 }
-                if (avatar == '/uploads/generic-avatar.jpg') {
+                if (user_avatar == '/uploads/generic-avatar.jpg') {
                     if (session.user.isAdmin == false) {
                         let newAvatar = LocalStorageService.getItem("image");
                         console.log(newAvatar)

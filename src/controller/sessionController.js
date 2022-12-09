@@ -15,8 +15,8 @@ export const sessionRegisterFail = async (req, res) => {
 export const sessionLogin = async (req, res) => {
     req.session.user = {
         email: req.user.email,
-        first_name: req.user.first_name,
-        last_name: req.user.last_name,
+        name: req.user.name,
+        phone: req.user.phone,
         avatar: req.user.avatar,
         cart_number: req.user.cart_number,
         delivery_address: req.user.delivery_address,
@@ -61,7 +61,6 @@ export const sessionInfo = (req, res) => {
 }
 
 export const modifyUserAvatar = async (req, res) => {
-    console.log("In modify avatar >>>> ",req.body);
     let auxurl = req.body.auxurl;
     let email = req.body.user_email;
     let avatar = {
