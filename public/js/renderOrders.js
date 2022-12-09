@@ -2,6 +2,14 @@ import renderHome from './renderHome.js';
 import emptyACart from './emptyACart.js';
 import modifyOneProduct from './modifyOneProduct.js';
 import ModifiedProduct from '../Classes/ModifiedProduct.js';
+import build_header from './getHeader.js';
+
+let headers_object = build_header();
+
+const requestOptionsGet = {
+    method: 'GET',
+    headers: headers_object
+}
 
 const renderOrders = (orderNumber, user_cart) => {
     document.getElementById('activeCart').innerHTML = "";
@@ -35,7 +43,7 @@ const renderOrders = (orderNumber, user_cart) => {
 
     const orderRoute = `/api/ordenes/${orderNumber}`
 
-    fetch(orderRoute)
+    fetch(orderRoute, requestOptionsGet)
         .then(res => res.json())
         .then(data => {
             if (data.message === "orden no encontrada") {

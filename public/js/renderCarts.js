@@ -44,9 +44,9 @@ const renderCarts = (cartNumber) => {
 
     hide(homePage)
 
-    const productRoute = `/api/carrito/${cartNumber}`
+    const cartRoute = `/api/carrito/${cartNumber}`
 
-    fetch(productRoute, requestOptionsGet)
+    fetch(cartRoute, requestOptionsGet)
         .then(res => res.json())
         .then(data => {
             if (data.message === "carrito no encontrado") {
@@ -80,7 +80,7 @@ const renderCarts = (cartNumber) => {
                         productos = JSON.parse(carrito[0].productos);
                         user_cart = data.carrito[0].id;
                         productos = carrito[0].productos;
-                       break;
+                        break;
                     default:
                         user_cart = carrito.id;
                         cartOwner = carrito.user_id;
@@ -134,7 +134,24 @@ const renderCarts = (cartNumber) => {
 
                 for (let product of productos) {
                     const tableBody = document.createElement('tr')
-                    tableBody.innerHTML = `<td>
+
+                    let productId = product.id
+
+                    const productRoute = `/api/productos/${productId}`
+                    let uproduct = {}
+                    fetch(productRoute, requestOptionsGet)
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.message === "Producto no encontrado") {
+                                alert("Producto no encontrado");
+                                renderHome();
+                            } else {
+                                uproduct = data.product
+                                if (uproduct.id === undefined) {
+                                    uproduct = data.product[0]
+                                }
+                                product.precio = uproduct.precio;
+                                tableBody.innerHTML = `<td>
                                             <p> 
                                                 ${product.id} 
                                             </p>
@@ -168,7 +185,11 @@ const renderCarts = (cartNumber) => {
                                             </p>
                                         </th>`
 
-                    cartContainer.appendChild(tableBody)
+                                cartContainer.appendChild(tableBody)
+
+                            }
+                        })
+                        .catch(err => console.log(err))
                 }
 
                 cart = {
@@ -177,6 +198,8 @@ const renderCarts = (cartNumber) => {
                     productos: productos,
                     user_cart: cartNumber
                 }
+
+                console.log("This is how cart remains >>> ", cart)
                 const cartFooter = document.createElement('div')
 
                 cartFooter.innerHTML = `<div class="form-group">
