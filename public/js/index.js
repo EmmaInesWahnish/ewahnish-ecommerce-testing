@@ -1,3 +1,5 @@
+import { LocalStorageService } from './localStorageService.js';
+
 import renderProducts from './renderProducts.js';
 
 import renderModalOneCart from './renderModalOneCart.js';
@@ -42,7 +44,7 @@ const emptyACart = document.getElementById('emptyACart');
 
 const homePage = document.getElementById('home');
 
-const order = document.getElementById('order')
+const order = document.getElementById('order');
 
 const socket = io();
 
@@ -88,7 +90,7 @@ function addMessage(e) {
     let author = {
         email: document.getElementById("email").value,
         nombre: document.getElementById("name").value,
-        apellido: document.getElementById("last_name").value,
+        telefono: document.getElementById("phone").value,
         edad: document.getElementById("age").value,
         alias: document.getElementById("nickname").value,
         avatar: document.getElementById("avatar").value

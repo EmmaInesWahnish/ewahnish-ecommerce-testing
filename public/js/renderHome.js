@@ -2,6 +2,7 @@ import renderLoginForm from './renderLoginForm.js';
 import modifyAvatar from './modifyAvatar.js';
 import build_header from './getHeader.js';
 import { LocalStorageService } from './localStorageService.js';
+import renderProducts from './renderProducts.js';
 
 let headers_object = build_header();
 
@@ -26,6 +27,8 @@ const renderHome = () => {
     const homePage = document.getElementById("homePage")
 
     let cartId = '';
+
+    let avatar = '';
 
     let user_avatar = '/uploads/generic-avatar.jpg';
 
@@ -76,7 +79,7 @@ const renderHome = () => {
                         await modifyAvatar(session.user.email)
                     }
                 }
-                if (user_avatar == '/uploads/generic-avatar.jpg') {
+                if (avatar == '/uploads/generic-avatar.jpg') {
                     if (session.user.isAdmin == false) {
                         let newAvatar = LocalStorageService.getItem("image");
                         console.log(newAvatar)
@@ -89,11 +92,13 @@ const renderHome = () => {
                 else {
                     console.log("Sale por segundo else >>>> ", avatar, " ", session.user.isAdmin)
                 }
-                }
-                else {
-                    renderLoginForm();
-                }
-            })
+                renderProducts()
+
+            }
+            else {
+                renderLoginForm();
+            }
+        })
         .catch(err => console.log(err))
 
 }

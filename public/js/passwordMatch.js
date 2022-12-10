@@ -1,8 +1,8 @@
-const passwordMatch = (password1, password2)=> {
+const passwordMatch = (password, password2)=> {
 
-    console.log("Uno ",password1,"Dos ", password2)
+    console.log("Uno ",password,"Dos ", password2)
 
-    if (password1 === password2) {
+    if (password === password2) {
         return true;
     }
     else {

@@ -47,8 +47,8 @@ const renderregisterForm = async () => {
     </div>
     <div id="check">
     <div class="form-group">
-        <label for="password1"><b>Password</b></label>
-        <input id="password1" class="form-control" type="password" name="password1">
+        <label for="password"><b>Password</b></label>
+        <input id="password" class="form-control" type="password" name="password">
     </div>
     <div class="form-group">
         <label for="password2"><b>Reingresar Password</b></label>
@@ -62,7 +62,7 @@ const renderregisterForm = async () => {
 
     <div class="form-group">
         <label for="phone"><b>Telefono</b></label>
-        <input id="phone" class="form-control" type="text" name="last_name">
+        <input id="phone" class="form-control" type="text" name="phone">
     </div>
 
     <div class="form-group">
@@ -79,22 +79,22 @@ const renderregisterForm = async () => {
 
     const form = document.getElementById('registerForm');
 
-    let password1 = document.getElementById("password1");
+    let password = document.getElementById("password");
 
     let password2 = document.getElementById("password2")
 
     let validated = false;
 
-    password1.addEventListener('change', function () {
-        let password1 = document.getElementById("password1").value;
+    password.addEventListener('change', function () {
+        let password = document.getElementById("password").value;
         let password2 = document.getElementById("password2").value;
-        validated = passwordMatch(password1, password2);
+        validated = passwordMatch(password, password2);
     })
 
     password2.addEventListener('change', function () {
-        let password1 = document.getElementById("password1").value;
+        let password = document.getElementById("password").value;
         let password2 = document.getElementById("password2").value;
-        validated = passwordMatch(password1, password2);
+        validated = passwordMatch(password, password2);
     })
 
     form.addEventListener('submit', evt => {

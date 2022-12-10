@@ -8,7 +8,6 @@ import {
 }
     from '../services/ProductService.js'
 import config from '../configurations/dotenvConfig.js';
-import usersService from '../Models/Users.js';
 import fs from 'fs';
 
 let whichDb = config.envs.SELECTED_DB

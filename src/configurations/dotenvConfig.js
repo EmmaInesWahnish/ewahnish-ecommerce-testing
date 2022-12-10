@@ -19,6 +19,9 @@ const DBS = {
 const config = {
   envs,
   admin_email: process.env.ADMIN_EMAIL,
+  mail_auth_user: process.env.MAIL_AUTH_USER,
+  mail_auth_pass: process.env.MAIL_AUTH_PASS,
+  mail_from: process.env.MAIL_FROM,
   persistences:DBS,
   server: {
     PORT: process.env.PORT ?? DEV_PORT,

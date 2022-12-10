@@ -19,9 +19,10 @@ const initializePassport = () => {
       
     passport.use('register', new LocalStrategy({ passReqToCallback: true, usernameField: 'email' }, async (req, email, password, done) => {
         try {
-            const { email, password1, password2, name, phone, age } = req.body;
-            if (!name || !email || !password1 || !password2) return done(null, false);
-            if  (password1 != password2) return done(null, false);
+            console.log(req.body)
+            const { email, password, password2, name, phone, age } = req.body;
+            if (!name || !email || !password || !password2) return done(null, false);
+            if  (password !== password2) return done(null, false);
             let exists = await usersService.findOne({ email: email });
             if (exists) return done(null, false);
             let avatar = '/uploads/generic-avatar.jpg';

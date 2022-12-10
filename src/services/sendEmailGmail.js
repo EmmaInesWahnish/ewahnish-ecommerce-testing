@@ -1,6 +1,7 @@
 import logConfiguration from '../js/gralLogger.js';
 import winston from 'winston';
 import { createTransport } from 'nodemailer';
+import  config from '../configurations/dotenvConfig.js';
 
 const ilogger = winston.createLogger(logConfiguration);
 
@@ -8,12 +9,12 @@ const transporter = createTransport({
     service: 'gmail',
     port: 587,
     auth: {
-        user: 'ewahnish@gmail.com',
-        pass: 'vlvzybaydltqdalp'
+        user: config.mail_auth_user,
+        pass: config.mail_auth_pass
     }
 });
 
-let from = 'todoherramientas@ferreteriaindustrial.com';
+let from = config.mail_from;
 
 const sendEmailGmail = async (destEmail, myMessage, mySubject, attachment) => {
     const mailOptions = {
