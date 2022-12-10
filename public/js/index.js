@@ -166,7 +166,8 @@ emptyACart.addEventListener('click', () => {
 })
 
 function signOut() {
-
+    document.getElementById('the-avatar').innerHTML = ``;
+    document.getElementById('welcome').innerHTML = ``;   
     const loginRoute = '/api/sessions/logout'
     let theStatus;
     fetch(loginRoute)
