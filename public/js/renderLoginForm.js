@@ -6,7 +6,7 @@ import { LocalStorageService } from './localStorageService.js';
 import renderModalUploadFile from './renderModalUploadFile.js';
 
 const renderLoginForm = () => {
-
+    LocalStorageService.setItem("chat",0);
     document.getElementById('activeCart').innerHTML = "";
     document.getElementById('cartNumber').innerHTML = "";
     document.getElementById('productCards').innerHTML = "";

@@ -144,14 +144,14 @@ productDetail.addEventListener('click', () => {
     renderModalOneProduct()
 })
 
-deleteCart.addEventListener('click', () => {
+/*deleteCart.addEventListener('click', () => {
     renderModalDeleteCart()
 })
 
 upload.addEventListener('click', () => {
     let picture = 'picture'
     renderModalUploadFile(picture)
-})
+})*/
 
 listCart.addEventListener('click', () => {
     renderModalOneCart(cartNumber)

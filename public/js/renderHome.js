@@ -92,7 +92,10 @@ const renderHome = () => {
                 else {
                     console.log("Sale por segundo else >>>> ", avatar, " ", session.user.isAdmin)
                 }
-                renderProducts()
+                let chat = LocalStorageService.getItem("chat")
+                if (chat === 0) {
+                    renderProducts()
+                }
 
             }
             else {

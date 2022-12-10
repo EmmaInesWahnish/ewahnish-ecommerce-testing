@@ -98,6 +98,8 @@ const renderProducts = async () => {
             idProducts = JSON.parse(localStorage.getItem('cart'))
 
             document.getElementById('productCards').innerHTML = "";
+            
+            LocalStorageService.setItem("chat", 1);
 
             const cardContainer = document.getElementById('productCards')
             for (let product of data.products) {
