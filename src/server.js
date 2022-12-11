@@ -21,6 +21,7 @@ import cluster from 'cluster';
 import { cpus } from 'os';
 import winston from 'winston';
 import logConfiguration from './js/gralLogger.js'
+import handlebars from 'express-handlebars';
 
 
 const app = express();
@@ -28,6 +29,8 @@ const app = express();
 const ilogger = winston.createLogger(logConfiguration);
 
 const modeCluster = config.server.MODE;
+
+const time_to_live = config.server.TIME_TO_LIVE;
 
 if (modeCluster === 'CLUSTER' && cluster.isPrimary) {
     const numCPUs = cpus().length
@@ -65,7 +68,7 @@ else {
         store: MongoStore.create({
             mongoUrl: URL,
             mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
-            ttl: 600
+            ttl: time_to_live
         }),
         secret: config.server.SESSION.SECRET_KEY,
         resave: false,
@@ -84,6 +87,10 @@ else {
     app.use(passport.initialize());
     app.use(passport.session());
 
+    app.engine('handlebars',handlebars.engine());
+    app.set('views',__dirname+'/views');
+    app.set('view engine','handlebars');
+    
     app.use(
         '/api/productos',
         passport.authenticate("jwt", { session: false }),
@@ -165,13 +172,6 @@ else {
         console.log("evt", typeof evt);
         console.log("Excepción no controlada");
     })
-
-    console.log(process.cwd());//Muestra la carpeta actual de trabajo current work directory
-    console.log(process.pid); //Id del proceso actual
-    console.log(process.title);//Desde dónde se corre el comando
-    console.log(process.version); //
-    console.log(process.platform);
-    console.log(process.memoryUsage());
 
     /* Server Listen */
     const port = config.server.PORT;

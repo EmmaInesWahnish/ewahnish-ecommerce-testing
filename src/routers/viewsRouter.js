@@ -1,5 +1,6 @@
 import express from 'express';
 import { __dirname } from '../utils.js';
+import config from '../configurations/dotenvConfig.js';
 import { 
     viewsRegister, 
     viewsLogin, 
@@ -9,6 +10,27 @@ import {
 } from '../controller/viewsController.js';
 
 const viewsRouter = express.Router();
+
+let configuration_info = {
+    puerto: config.server.PORT,
+    modo: config.server.MODE,
+    ttl: config.time_to_live,
+    base_route: config.server.routes.base,
+    base_de_datos: process.env.SELECTED_DB
+}
+
+let mem_usage = process.memoryUsage();
+
+let server_info = {
+    carpeta: process.cwd(),
+    title: process.title,
+    version: process.version,
+    rss: mem_usage.rss,
+    heap: mem_usage.heapTotal,
+    used: mem_usage.heapUsed,
+    external: mem_usage.external,
+    buffers: mem_usage.arrayBuffers
+}
 
 viewsRouter.get('/register', viewsRegister);
 
@@ -20,5 +42,12 @@ viewsRouter.get('/', viewsInfo);
 
 viewsRouter.post('/register_email', viewsRegisterEmail)
 
+viewsRouter.get('/server_info',(req,res)=>{
+    res.render('server_info.handlebars',{info:server_info})
+})
+
+viewsRouter.get('/configuration_info',(req,res)=>{
+    res.render('configuration_info.handlebars',{configuration_info})
+})
 
 export default viewsRouter
