@@ -30,3 +30,99 @@
 {"level":"info","message":"PID MASTER 3168","service":"user-service","timestamp":"2022-12-11T13:45:25.278Z"}
 {"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T13:48:19.311Z"}
 {"level":"info","message":"PID MASTER 19672","service":"user-service","timestamp":"2022-12-11T13:48:19.314Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:36:08.736Z"}
+{"level":"info","message":"PID MASTER 21836","service":"user-service","timestamp":"2022-12-11T14:36:08.738Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:38:27.256Z"}
+{"level":"info","message":"PID MASTER 20672","service":"user-service","timestamp":"2022-12-11T14:38:27.259Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:40:46.996Z"}
+{"level":"info","message":"PID MASTER 5488","service":"user-service","timestamp":"2022-12-11T14:40:46.998Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:42:13.537Z"}
+{"level":"info","message":"PID MASTER 21472","service":"user-service","timestamp":"2022-12-11T14:42:13.540Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:48:31.136Z"}
+{"level":"info","message":"PID MASTER 2840","service":"user-service","timestamp":"2022-12-11T14:48:31.139Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:52:53.432Z"}
+{"level":"info","message":"PID MASTER 3120","service":"user-service","timestamp":"2022-12-11T14:52:53.435Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:58:19.009Z"}
+{"level":"info","message":"PID MASTER 4296","service":"user-service","timestamp":"2022-12-11T14:58:19.012Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T14:59:39.484Z"}
+{"level":"info","message":"PID MASTER 9956","service":"user-service","timestamp":"2022-12-11T14:59:39.487Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:03:30.543Z"}
+{"level":"info","message":"PID MASTER 9520","service":"user-service","timestamp":"2022-12-11T15:03:30.546Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:07:26.237Z"}
+{"level":"info","message":"PID MASTER 18876","service":"user-service","timestamp":"2022-12-11T15:07:26.239Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:07:43.511Z"}
+{"level":"info","message":"PID MASTER 21832","service":"user-service","timestamp":"2022-12-11T15:07:43.516Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:07:56.871Z"}
+{"level":"info","message":"PID MASTER 3496","service":"user-service","timestamp":"2022-12-11T15:07:56.874Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:09:14.759Z"}
+{"level":"info","message":"PID MASTER 19344","service":"user-service","timestamp":"2022-12-11T15:09:14.762Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:09:37.253Z"}
+{"level":"info","message":"PID MASTER 4196","service":"user-service","timestamp":"2022-12-11T15:09:37.255Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:11:16.529Z"}
+{"level":"info","message":"PID MASTER 7112","service":"user-service","timestamp":"2022-12-11T15:11:16.531Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:30:00.143Z"}
+{"level":"info","message":"PID MASTER 21716","service":"user-service","timestamp":"2022-12-11T15:30:00.146Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:30:08.419Z"}
+{"level":"info","message":"PID MASTER 20944","service":"user-service","timestamp":"2022-12-11T15:30:08.422Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:34:14.597Z"}
+{"level":"info","message":"PID MASTER 1780","service":"user-service","timestamp":"2022-12-11T15:34:14.600Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:35:34.264Z"}
+{"level":"info","message":"PID MASTER 21252","service":"user-service","timestamp":"2022-12-11T15:35:34.267Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:35:59.582Z"}
+{"level":"info","message":"PID MASTER 476","service":"user-service","timestamp":"2022-12-11T15:35:59.585Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:36:58.708Z"}
+{"level":"info","message":"PID MASTER 1932","service":"user-service","timestamp":"2022-12-11T15:36:58.711Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:40:57.226Z"}
+{"level":"info","message":"PID MASTER 13232","service":"user-service","timestamp":"2022-12-11T15:40:57.229Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:42:08.633Z"}
+{"level":"info","message":"PID MASTER 23548","service":"user-service","timestamp":"2022-12-11T15:42:08.636Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:43:25.894Z"}
+{"level":"info","message":"PID MASTER 6964","service":"user-service","timestamp":"2022-12-11T15:43:25.896Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:43:35.179Z"}
+{"level":"info","message":"PID MASTER 488","service":"user-service","timestamp":"2022-12-11T15:43:35.182Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:52:30.476Z"}
+{"level":"info","message":"PID MASTER 12516","service":"user-service","timestamp":"2022-12-11T15:52:30.479Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:53:55.247Z"}
+{"level":"info","message":"PID MASTER 1508","service":"user-service","timestamp":"2022-12-11T15:53:55.250Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:54:48.110Z"}
+{"level":"info","message":"PID MASTER 21508","service":"user-service","timestamp":"2022-12-11T15:54:48.112Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:54:57.476Z"}
+{"level":"info","message":"PID MASTER 6496","service":"user-service","timestamp":"2022-12-11T15:54:57.479Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:55:23.607Z"}
+{"level":"info","message":"PID MASTER 23020","service":"user-service","timestamp":"2022-12-11T15:55:23.609Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:57:12.572Z"}
+{"level":"info","message":"PID MASTER 11644","service":"user-service","timestamp":"2022-12-11T15:57:12.576Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:57:51.495Z"}
+{"level":"info","message":"PID MASTER 3456","service":"user-service","timestamp":"2022-12-11T15:57:51.497Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:58:06.370Z"}
+{"level":"info","message":"PID MASTER 8268","service":"user-service","timestamp":"2022-12-11T15:58:06.372Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:58:13.761Z"}
+{"level":"info","message":"PID MASTER 4036","service":"user-service","timestamp":"2022-12-11T15:58:13.764Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T15:58:29.697Z"}
+{"level":"info","message":"PID MASTER 15720","service":"user-service","timestamp":"2022-12-11T15:58:29.700Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T16:02:35.903Z"}
+{"level":"info","message":"PID MASTER 1512","service":"user-service","timestamp":"2022-12-11T16:02:35.906Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T16:05:51.034Z"}
+{"level":"info","message":"PID MASTER 16972","service":"user-service","timestamp":"2022-12-11T16:05:51.037Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:23:50.866Z"}
+{"level":"info","message":"PID MASTER 20368","service":"user-service","timestamp":"2022-12-11T17:23:50.869Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:31:35.470Z"}
+{"level":"info","message":"PID MASTER 14992","service":"user-service","timestamp":"2022-12-11T17:31:35.473Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:33:32.538Z"}
+{"level":"info","message":"PID MASTER 22044","service":"user-service","timestamp":"2022-12-11T17:33:32.541Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:33:53.640Z"}
+{"level":"info","message":"PID MASTER 4608","service":"user-service","timestamp":"2022-12-11T17:33:53.644Z"}
+{"level":"info","message":"nodemailer test message [object Object]","service":"user-service","timestamp":"2022-12-11T17:35:12.098Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:45:23.185Z"}
+{"level":"info","message":"PID MASTER 1632","service":"user-service","timestamp":"2022-12-11T17:45:23.188Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:47:30.111Z"}
+{"level":"info","message":"PID MASTER 22892","service":"user-service","timestamp":"2022-12-11T17:47:30.114Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:53:55.580Z"}
+{"level":"info","message":"PID MASTER 4592","service":"user-service","timestamp":"2022-12-11T17:53:55.583Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:57:38.845Z"}
+{"level":"info","message":"PID MASTER 5936","service":"user-service","timestamp":"2022-12-11T17:57:38.848Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T17:59:23.140Z"}
+{"level":"info","message":"PID MASTER 20420","service":"user-service","timestamp":"2022-12-11T17:59:23.143Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T18:05:46.033Z"}
+{"level":"info","message":"PID MASTER 19220","service":"user-service","timestamp":"2022-12-11T18:05:46.035Z"}
+{"level":"info","message":"nodemailer test message [object Object]","service":"user-service","timestamp":"2022-12-11T18:06:51.306Z"}

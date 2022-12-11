@@ -1,15 +1,17 @@
 import express from 'express';
 import { __dirname } from '../utils.js';
 import config from '../configurations/dotenvConfig.js';
-import { 
-    viewsRegister, 
-    viewsLogin, 
-    viewsEmail, 
-    viewsInfo, 
-    viewsRegisterEmail 
+import {
+    viewsRegister,
+    viewsLogin,
+    viewsEmail,
+    viewsInfo,
+    viewsRegisterEmail
 } from '../controller/viewsController.js';
 
 const viewsRouter = express.Router();
+
+let admin_enail = config.admin_email;
 
 let configuration_info = {
     puerto: config.server.PORT,
@@ -24,7 +26,7 @@ let mem_usage = process.memoryUsage();
 for (let key in mem_usage) {
     let newValue = Math.round(mem_usage[key] / 1024 / 1024 * 100) / 100;
     mem_usage[key] = newValue
-  }
+}
 
 let server_info = {
     carpeta: process.cwd(),
@@ -47,12 +49,20 @@ viewsRouter.get('/', viewsInfo);
 
 viewsRouter.post('/register_email', viewsRegisterEmail)
 
-viewsRouter.get('/server_info',(req,res)=>{
-    res.render('server_info.handlebars',{server_info})
+viewsRouter.get('/server_info', (req, res) => {
 })
 
-viewsRouter.get('/configuration_info',(req,res)=>{
-    res.render('configuration_info.handlebars',{configuration_info})
+viewsRouter.get('/configuration_info', (req, res) => {
+    if (req.user != undefined) {
+        if (req.user.email === admin_enail) {
+            res.render('configuration_info.handlebars', { configuration_info });
+        }
+        else{
+            res.render('unauthorised.handlebars')
+        }
+    } else {
+        res.render('unauthorised.handlebars')
+    }
 })
 
 export default viewsRouter

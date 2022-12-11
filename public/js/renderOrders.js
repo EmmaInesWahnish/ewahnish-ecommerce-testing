@@ -87,33 +87,16 @@ const renderOrders = (orderNumber, user_cart) => {
 
                 cliente.innerHTML = `A nombre de ${name}`;
 
-                const tableHead = document.createElement('tr');
+                const tableHead = document.createElement('thead');
 
-                tableHead.innerHTML = `<th>
-                                            <p> 
-                                                Id 
-                                            </p>
-                                        </th>   
+                tableHead.classList.add('table-responsive', 'table-dark') 
+
+                tableHead.innerHTML = `<tr>
                                         <th>
                                             <p> 
                                                 Nombre
                                             </p>
                                         </th>
-                                        <th>
-                                            <p> 
-                                                Descripcion
-                                            </p>
-                                        </th>
-                                        <th>
-                                            <p> 
-                                                Codigo
-                                            </p>
-                                        </th>    
-                                        <th>
-                                            <p> 
-                                                Foto
-                                            </p>
-                                        </th>    
                                         <th>
                                             <p> 
                                                 Precio
@@ -128,7 +111,8 @@ const renderOrders = (orderNumber, user_cart) => {
                                             <p> 
                                                 Importe
                                             </p>
-                                        </th>`
+                                        </th>
+                                    </tr>`
 
                 productsInOrder.appendChild(tableHead);
 
@@ -139,29 +123,13 @@ const renderOrders = (orderNumber, user_cart) => {
                     let stock = Number(product.stock) - Number(product.cantidad)
                     total = total + importe;
                     const tableBody = document.createElement('tr')
-                    tableBody.innerHTML = `<td>
-                                            <p> 
-                                                ${product.id} 
-                                            </p>
-                                        </td>
+
+                    tableBody.innerHTML = `<tr>
                                         <td>
                                             <p> 
                                                 ${product.nombre}
                                             </p>
                                         </td>
-                                        <td>
-                                            <p> 
-                                                ${product.descripcion}
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p> 
-                                                ${product.codigo}
-                                            </p>
-                                        </td>    
-                                        <td>
-                                            <img src='${product.foto}'>
-                                        </td>    
                                         <td>
                                             <p> 
                                                 ${product.precio}
@@ -176,7 +144,7 @@ const renderOrders = (orderNumber, user_cart) => {
                                             <p> 
                                                 ${importe}
                                             </p>
-                                        </th>`
+                                        </td>`
 
                     productsInOrder.appendChild(tableBody)
 

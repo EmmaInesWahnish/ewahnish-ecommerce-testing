@@ -46,6 +46,8 @@ const homePage = document.getElementById('home');
 
 const order = document.getElementById('order');
 
+const isAdmin = LocalStorageService.getItem("isAmin");
+
 const socket = io();
 
 let messages = document.getElementById('messages');

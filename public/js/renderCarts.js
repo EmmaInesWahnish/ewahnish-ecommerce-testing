@@ -92,7 +92,9 @@ const renderCarts = (cartNumber) => {
 
                 const cartContainer = document.getElementById('productsInCart')
 
-                const tableHead = document.createElement('tr');
+                const tableHead = document.createElement('thead');
+
+                tableHead.classList.add('table-dark') 
 
                 tableHead.innerHTML = `<th>
                                             <p> 
@@ -128,12 +130,13 @@ const renderCarts = (cartNumber) => {
                                             <p> 
                                                 Pedido
                                             </p>
-                                        </th>`
+                                        </th>
+                                    </thead>`
 
                 cartContainer.appendChild(tableHead)
 
                 for (let product of productos) {
-                    const tableBody = document.createElement('tr')
+                    const tableBody = document.createElement('tbody')
 
                     let productId = product.id
 
@@ -183,7 +186,7 @@ const renderCarts = (cartNumber) => {
                                             <p> 
                                                 ${product.cantidad}
                                             </p>
-                                        </th>`
+                                        </td>`
 
                                 cartContainer.appendChild(tableBody)
 
