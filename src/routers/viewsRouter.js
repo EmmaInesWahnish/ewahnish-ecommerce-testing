@@ -21,6 +21,11 @@ let configuration_info = {
 
 let mem_usage = process.memoryUsage();
 
+for (let key in mem_usage) {
+    let newValue = Math.round(mem_usage[key] / 1024 / 1024 * 100) / 100;
+    mem_usage[key] = newValue
+  }
+
 let server_info = {
     carpeta: process.cwd(),
     title: process.title,
@@ -43,7 +48,7 @@ viewsRouter.get('/', viewsInfo);
 viewsRouter.post('/register_email', viewsRegisterEmail)
 
 viewsRouter.get('/server_info',(req,res)=>{
-    res.render('server_info.handlebars',{info:server_info})
+    res.render('server_info.handlebars',{server_info})
 })
 
 viewsRouter.get('/configuration_info',(req,res)=>{

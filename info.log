@@ -20,3 +20,13 @@
 {"level":"info","message":"PID MASTER 1852","service":"user-service","timestamp":"2022-12-11T01:32:25.042Z"}
 {"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T01:44:54.144Z"}
 {"level":"info","message":"PID MASTER 1984","service":"user-service","timestamp":"2022-12-11T01:44:54.147Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T12:20:48.433Z"}
+{"level":"info","message":"PID MASTER 20896","service":"user-service","timestamp":"2022-12-11T12:20:48.435Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T13:32:32.504Z"}
+{"level":"info","message":"PID MASTER 18788","service":"user-service","timestamp":"2022-12-11T13:32:32.507Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T13:33:18.421Z"}
+{"level":"info","message":"PID MASTER 21996","service":"user-service","timestamp":"2022-12-11T13:33:18.423Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T13:45:25.275Z"}
+{"level":"info","message":"PID MASTER 3168","service":"user-service","timestamp":"2022-12-11T13:45:25.278Z"}
+{"level":"info","message":"Número de procesadores: 8","service":"user-service","timestamp":"2022-12-11T13:48:19.311Z"}
+{"level":"info","message":"PID MASTER 19672","service":"user-service","timestamp":"2022-12-11T13:48:19.314Z"}

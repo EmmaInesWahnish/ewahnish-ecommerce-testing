@@ -1,5 +1,47 @@
-<div>
-    <h1>Info</h1>
-    <p>Carpeta actual de trabajo: {{}}</p>
-    <p>Nombre: {{user.name}}</p>
+<div class="body grid1-container__item4">
+    <h1>Informacion del Servidor</h1>
+</div>
+<div class="displayBlock m-3">
+    <table class="table table-responsive-sm table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Clave</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Carpeta</td>
+                <td>{{server_info.carpeta}}</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>{{server_info.title}}</td>
+            </tr>
+            <tr>
+                <td>Version de Node</td>
+                <td>{{server_info.version}}</td>
+            </tr>
+            <tr>
+                <td>Memoria en RAM</td>
+                <td>{{server_info.rss}} Mb</td>
+            </tr>
+            <tr>
+                <td>Memoria asignada por V8</td>
+                <td>{{server_info.heap}} Mb</td>
+            </tr>
+            <tr>
+                <td>Uso de Memoria</td>
+                <td>{{server_info.used}} Mb</td>
+            </tr>
+            <tr>
+                <td>External</td>
+                <td>{{server_info.external}} Mb</td>
+            </tr>
+            <tr>
+                <td>Array Buffers</td>
+                <td>{{server_info.buffers}} Mb</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

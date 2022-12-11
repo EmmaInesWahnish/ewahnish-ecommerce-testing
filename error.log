@@ -55,3 +55,4 @@
 {"level":"error","message":"Worker","service":"user-service","timestamp":"2022-12-10T15:38:11.346Z"}
 {"level":"error","message":"Worker","service":"user-service","timestamp":"2022-12-10T15:38:11.766Z"}
 {"level":"error","message":"404 - ruta no encontrada /favicon.ico","service":"user-service","timestamp":"2022-12-11T00:47:26.366Z"}
+{"level":"error","message":"404 - ruta no encontrada /favicon.ico","service":"user-service","timestamp":"2022-12-11T12:21:05.906Z"}
