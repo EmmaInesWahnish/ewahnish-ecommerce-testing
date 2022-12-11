@@ -20,9 +20,9 @@ import { __dirname } from './utils.js';
 import cluster from 'cluster';
 import { cpus } from 'os';
 import winston from 'winston';
-import logConfiguration from './js/gralLogger.js'
+import logConfiguration from './js/gralLogger.js';
+import terminate from './js/terminate.js';
 import handlebars from 'express-handlebars';
-
 
 const app = express();
 
@@ -87,10 +87,10 @@ else {
     app.use(passport.initialize());
     app.use(passport.session());
 
-    app.engine('handlebars',handlebars.engine());
-    app.set('views',__dirname+'/views');
-    app.set('view engine','handlebars');
-    
+    app.engine('handlebars', handlebars.engine());
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'handlebars');
+
     app.use(
         '/api/productos',
         passport.authenticate("jwt", { session: false }),
@@ -164,19 +164,20 @@ else {
         return list;
     }
 
-    process.on('exit', evt => {
-        console.log("Saliendo...")
-        console.log(evt);
-    })
-    process.on('uncaughtException', evt => {
-        console.log("evt", typeof evt);
-        console.log("Excepción no controlada");
-    })
+
 
     /* Server Listen */
     const port = config.server.PORT;
     const server = httpServer.listen(port, () => {
         console.log(`Server http listening at port ${server.address().port} process id ${process.pid}`)
     });
-    server.on("error", (error) => console.log(`Error in server ${error}`))
+    const exitHandler = terminate(server, {
+        coredump: false,
+        timeout: 500
+    })
+    process.on('exit', exitHandler(1, 'Excepcion no Controlada'));
+    process.on('unhandledRejection',exitHandler(1, 'Promesa no controlada'));
+    process.on('SIGTERM', exitHandler(0, 'SIGTERM'))
+    process.on('SIGINT', exitHandler(0, 'SIGINT'))
+    server.on("error", (error) => ilogger.error(`Error in server ${error}`))
 }

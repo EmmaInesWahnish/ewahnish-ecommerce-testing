@@ -1,0 +1,31 @@
+<div class="body grid1-container__item4">
+    <h1>Estado del Servidor</h1>
+</div>
+<div class="displayBlock m-3">
+    <table class="table table-responsive-sm table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Clave</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Estado</td>
+                <td>{{server_check.status}}</td>
+            </tr>
+            <tr>
+                <td>Uptime</td>
+                <td>{{server_check.uptime}}</td>
+            </tr>
+            <tr>
+                <td>Mensaje</td>
+                <td>{{server_check.message}}</td>
+            </tr>
+            <tr>
+                <td>Fecha</td>
+                <td>{{server_check.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

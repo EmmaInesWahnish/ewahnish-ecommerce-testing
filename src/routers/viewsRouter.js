@@ -39,6 +39,13 @@ let server_info = {
     buffers: mem_usage.arrayBuffers
 }
 
+let server_check = {
+    status: 200,
+    uptime: process.uptime(),
+    message: 'Servidor activo',
+    date: new Date()
+}
+
 viewsRouter.get('/register', viewsRegister);
 
 viewsRouter.get('/login', viewsLogin);
@@ -50,6 +57,19 @@ viewsRouter.get('/', viewsInfo);
 viewsRouter.post('/register_email', viewsRegisterEmail)
 
 viewsRouter.get('/server_info', (req, res) => {
+    if (req.user != undefined) {
+        res.render('server_info.handlebars', { server_info });
+    } else {
+        res.render('unauthorized.handlebars')
+    }
+})
+
+viewsRouter.get('/server_check', (req, res) => {
+    if (req.user != undefined) {
+        res.render('server_check.handlebars', { server_check });
+    } else {
+        res.render('unauthorized.handlebars')
+    }
 })
 
 viewsRouter.get('/configuration_info', (req, res) => {
@@ -57,11 +77,11 @@ viewsRouter.get('/configuration_info', (req, res) => {
         if (req.user.email === admin_enail) {
             res.render('configuration_info.handlebars', { configuration_info });
         }
-        else{
-            res.render('unauthorised.handlebars')
+        else {
+            res.render('unauthorized.handlebars')
         }
     } else {
-        res.render('unauthorised.handlebars')
+        res.render('unauthorized.handlebars')
     }
 })
 
