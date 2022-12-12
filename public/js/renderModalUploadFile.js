@@ -1,4 +1,3 @@
-
 import renderLoginForm from './renderLoginForm.js';
 const renderModalUploadFile = async (picture) => {
 

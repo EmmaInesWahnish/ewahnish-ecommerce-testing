@@ -89,7 +89,7 @@ const renderOrders = (orderNumber, user_cart) => {
 
                 const tableHead = document.createElement('thead');
 
-                tableHead.classList.add('table-responsive', 'table-dark') 
+                tableHead.classList.add('table-responsive', 'table-dark')
 
                 tableHead.innerHTML = `<tr>
                                         <th>
@@ -195,6 +195,9 @@ const renderOrders = (orderNumber, user_cart) => {
             .then(async res => {
                 await res.json();
             })
+
+        document.getElementById('modalForm').style.display = 'none';
+
     })
 
 }

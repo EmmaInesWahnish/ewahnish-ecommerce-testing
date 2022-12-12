@@ -879,3 +879,13 @@ i {
 .toggle-content.is-visible {
 	display: block;
 }
+
+.width50 {
+  width:50%;
+  margin: auto;
+}
+
+.grid1-container__item4:hover {
+  box-shadow:rgba(0, 0, 75, 0.45) 0px 25px 20px -20px;
+  transform: translate3d(0, -4px, 0);
+}
