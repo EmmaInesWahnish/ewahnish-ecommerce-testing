@@ -15,7 +15,6 @@ const getImage = async () => {
     fetch(imageRoute, requestOptions)
     .then(res => res.json())
     .then(data  => {
-        console.log(data);
         LocalStorageService.setItem("image",data.response[0].auxurl);
         return data.response[0].auxurl;
     })

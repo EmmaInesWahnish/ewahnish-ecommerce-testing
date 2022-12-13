@@ -23,7 +23,6 @@ const getOneProduct = async (productId) => {
                 if (product.id === undefined){
                     product = data.product[0]
                 }
-                console.log("In get products >>> ",product)
                 return product;
             }
         })

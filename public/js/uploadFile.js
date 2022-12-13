@@ -5,8 +5,6 @@ const uploadFile = (thefile) => {
 
     formData.append("avatar",thefile)
 
-    console.log(thefile)
-
     const requestOptions = {
         method: 'POST',
         body: formData,
@@ -17,8 +15,6 @@ const uploadFile = (thefile) => {
     fetch(uploadRoute, requestOptions)
         .then(async res => {
           const filepath = await res();
-
-          console.log(filepath)
         })
         .catch((err) => ("Error occured", err));
 }

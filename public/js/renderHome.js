@@ -76,16 +76,15 @@ const renderHome = () => {
                             needAvatar: false
                         }
                         LocalStorageService.setItem("newUser", newUser);
-                        setTimeout(async () => {
-                            await modifyAvatar(session.user.email)
-                        }, 1)
+                        await modifyAvatar(session.user.email)
                     }
                 }
-                if (avatar == '/uploads/generic-avatar.jpg') {
-                    if (session.user.isAdmin == false) {
-                        let newAvatar = LocalStorageService.getItem("image");
-                        console.log(newAvatar)
-                        document.getElementById('the-avatar').innerHTML = `<img id="user_avatar" class="avatar" src="${newAvatar}"/> ${session.user.email} Logged in`
+                if (avatar === '/uploads/generic-avatar.jpg') {
+                    if (session.user.isAdmin === false) {
+                        setTimeout(() => {
+                            let newAvatar = LocalStorageService.getItem("image");
+                            document.getElementById('the-avatar').innerHTML = `<img id="user_avatar" class="avatar" src="${newAvatar}"/> ${session.user.email} Logged in`
+                        }, 1000)
                     }
                 }
                 let chat = LocalStorageService.getItem("chat")

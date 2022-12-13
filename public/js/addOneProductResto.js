@@ -13,8 +13,6 @@ const addOneProduct = (addedProduct) => {
         body: addedProduct,
     };
 
-    console.log(requestOptions.body)
-
     fetch(productRoute, requestOptions)
     .then(async res => {
         await res.json();

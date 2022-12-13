@@ -10,8 +10,6 @@ const getUserCart = async (allCarts) => {
 
             let userId = '';
 
-            console.log("User id  >>>>> ",cart.user_id)
-
             if (cart.user_id !== undefined) {
                 userId = cart.user_id;
             }

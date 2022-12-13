@@ -32,7 +32,6 @@ const getAndModifyOneProduct = async (productId) => {
                 }
                 if ((newProduct != null) && (newProduct.isNew)) {
                     let auxurl = LocalStorageService.getItem("image");
-                    console.log(auxurl)
                     product.foto = auxurl;
                     modifyOneProduct(product);
                 }

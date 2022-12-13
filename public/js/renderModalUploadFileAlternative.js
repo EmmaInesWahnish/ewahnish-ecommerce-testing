@@ -25,7 +25,6 @@ const renderModalUploadFile = () => {
                 let loadFile = (e) => {
                     let image = document.getElementById('output');
                     image.src = URL.createObjectURL(e.target.files[0]);
-                    console.log(image.src)
 
                 }
 

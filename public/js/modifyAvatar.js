@@ -20,7 +20,6 @@ const modifyAvatar = async (user_email) => {
     fetch(imageRoute, requestOptions)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             LocalStorageService.setItem("image", data.response[0].auxurl);
             let auxurl = data.response[0].auxurl;
             obj = {

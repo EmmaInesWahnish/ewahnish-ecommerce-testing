@@ -7,7 +7,6 @@ export const sessionRegister = async (req, res) => {
 }
 
 export const sessionRegisterFail = async (req, res) => {
-    console.log("Register failed");
     res.status(500).send({ status: "error", error: "Register failed" })
     req.logger.warn('Intento de registro fallido')
 }
@@ -36,13 +35,10 @@ export const sessionLogin = async (req, res) => {
         token: decodedToken, session: req.session.user
     }
 
-    console.log("Token >>> ", payload)
-
     res.status(200).send({ status: "success", payload: req.session.user, data: token })
 }
 
 export const sessionLoginFail = (req, res) => {
-    console.log("login failed");
     res.status(500).send({ status: "error", error: "Login failed" })
     req.logger.warn('Intento de login fallido');
 }

@@ -23,7 +23,6 @@ const getAllCarts = async () => {
                 allCarts = [...data.carrito];                
             }
             cart_number = getUserCart(allCarts);
-            console.log(cart_number);
             return cart_number;
         })
         .catch (err => console.log(err))

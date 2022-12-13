@@ -124,7 +124,6 @@ const renderNewProductForm = async () => {
     })
 
     const isValid = (amount, limit) => {
-      console.log(amount,limit)
       if (amount > limit) {
         return true
       }

@@ -104,8 +104,6 @@ const renderregisterForm = async () => {
         let obj = {};
         data.forEach((value, key) => obj[key] = value);
 
-        console.log("Object ", obj)
-
         const registerRoute = '/api/sessions/register'
 
         const requestOptions = {
