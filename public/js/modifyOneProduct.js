@@ -25,7 +25,6 @@ const modifyOneProduct = (modifiedProduct) => {
                     showOneProduct(productId);
                 }
             } else {
-                console.log("la data",data);
                 let productId = modifiedProduct.id;
                 showOneProduct(productId);
             }

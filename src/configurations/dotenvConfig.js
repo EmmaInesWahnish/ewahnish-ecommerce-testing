@@ -22,7 +22,9 @@ const config = {
   mail_auth_user: process.env.MAIL_AUTH_USER,
   mail_auth_pass: process.env.MAIL_AUTH_PASS,
   mail_from: process.env.MAIL_FROM,
+  mail_to: process.env.MAIL_TO,
   time_to_live: process.env.TIME_TO_LIVE,
+  expires_in: process.env.EXPIRES_IN,
   persistences:DBS,
   server: {
     PORT: process.env.PORT ?? DEV_PORT,

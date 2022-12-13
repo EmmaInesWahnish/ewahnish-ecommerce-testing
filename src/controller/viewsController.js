@@ -1,7 +1,10 @@
 import sendMail from '../services/sendEmail.js';
+import config from '../configurations/dotenvConfig.js';
 import sendMailGmail from '../services/sendEmailGmail.js';
 import usersService from '../Models/Users.js';
 import { __dirname } from '../utils.js';
+
+let mail_to = config.mail_to;
 
 export const viewsRegister = (req, res) => {
     if (req.session.user) {
@@ -38,6 +41,7 @@ export const viewsEmail = async (req, res) => {
     }
 
     let myHTML = '';
+
 
     myHTML = `<h3>
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -86,7 +90,7 @@ export const viewsEmail = async (req, res) => {
             delivery_address: deliveryAddress
         }
 
-        await usersService.findOneAndUpdate({_id:req.session.user.id}, delivery_address, {returnOriginal: false})
+        await usersService.findOneAndUpdate({ _id: req.session.user.id }, delivery_address, { returnOriginal: false })
     }
     catch (error) {
         res.json({
@@ -97,6 +101,8 @@ export const viewsEmail = async (req, res) => {
     }
 
     await sendMailGmail(destEmail, myHTML, `Orden de Compra Nro ${orderNumber}`, attachment)
+    await sendMailGmail(mail_to, myHTML, `Orden de Compra Nro ${orderNumber}`, attachment)
+
 }
 
 export const viewsInfo = (req, res) => {
@@ -134,5 +140,6 @@ export const viewsRegisterEmail = async (req, res) => {
     <hr>`;
 
     await sendMailGmail(destEmail, myHTML, `Registro de Usuario  ${name}`, attachment)
+    await sendMailGmail(mail_to, myHTML, `Registro de Usuario  ${name}`, attachment)
 
 }

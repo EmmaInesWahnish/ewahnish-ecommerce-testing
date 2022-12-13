@@ -27,7 +27,7 @@ const sendEmailGmail = async (destEmail, myMessage, mySubject, attachment) => {
 
     try {
         const info = await transporter.sendMail(mailOptions)
-        ilogger.info(`nodemailer test message ${info}`)
+        ilogger.info(`nodemailer message ${info}`)
     }
     catch(error){
         ilogger.error(`Error: Error trying to send email ${error}`)

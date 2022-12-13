@@ -76,7 +76,9 @@ const renderHome = () => {
                             needAvatar: false
                         }
                         LocalStorageService.setItem("newUser", newUser);
-                        await modifyAvatar(session.user.email)
+                        setTimeout(async () => {
+                            await modifyAvatar(session.user.email)
+                        }, 1)
                     }
                 }
                 if (avatar == '/uploads/generic-avatar.jpg') {
@@ -85,12 +87,6 @@ const renderHome = () => {
                         console.log(newAvatar)
                         document.getElementById('the-avatar').innerHTML = `<img id="user_avatar" class="avatar" src="${newAvatar}"/> ${session.user.email} Logged in`
                     }
-                    else {
-                        console.log("Sale por primer else >>>> ", avatar, " ", session.user.isAdmin)
-                    }
-                }
-                else {
-                    console.log("Sale por segundo else >>>> ", avatar, " ", session.user.isAdmin)
                 }
                 let chat = LocalStorageService.getItem("chat")
                 if (chat === 0) {

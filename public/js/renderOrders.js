@@ -3,6 +3,7 @@ import emptyACart from './emptyACart.js';
 import modifyOneProduct from './modifyOneProduct.js';
 import ModifiedProduct from '../Classes/ModifiedProduct.js';
 import build_header from './getHeader.js';
+import renderProducts from './renderProducts.js';
 
 let headers_object = build_header();
 
@@ -161,8 +162,6 @@ const renderOrders = (orderNumber, user_cart) => {
                     modifyOneProduct(modifiedProduct)
                 }
 
-
-
                 let orderTotal = document.getElementById('orderTotal');
 
                 orderTotal.innerText = `Importe total ${total}`;
@@ -195,7 +194,7 @@ const renderOrders = (orderNumber, user_cart) => {
             .then(async res => {
                 await res.json();
             })
-
+        renderProducts();            
         document.getElementById('modalForm').style.display = 'none';
 
     })

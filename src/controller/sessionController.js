@@ -24,8 +24,9 @@ export const sessionLogin = async (req, res) => {
         id: req.user._id
     };
     const body = { id: req.user.id };
-    const token = jwt.sign({ user: body }, config.server.JWT.SECRET_KEY);
-
+    const token = jwt.sign({ user: body }, 
+        config.server.JWT.SECRET_KEY,
+        {expiresIn:config.expires_in});
 
     let userEmail = req.session.user.email;
 
