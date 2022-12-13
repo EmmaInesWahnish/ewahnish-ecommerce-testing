@@ -159,9 +159,9 @@ listCart.addEventListener('click', () => {
     renderModalOneCart(cartNumber)
 })
 
-order.addEventListener('click', () => {
+/*order.addEventListener('click', () => {
     renderModalOneOrder()
-})
+})*/
 
 emptyACart.addEventListener('click', () => {
     renderModalEmptyACart(cartNumber)

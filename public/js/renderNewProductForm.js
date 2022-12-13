@@ -154,7 +154,7 @@ const renderNewProductForm = async () => {
     })
 
   } else {
-    alert("Operacion no autorizada")
+    alert("Para poder dar dar de alta productos, debe ingresar con perfil de administrador")
     renderHome()
   }
 

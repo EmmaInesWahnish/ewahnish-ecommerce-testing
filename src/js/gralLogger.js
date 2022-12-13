@@ -27,7 +27,7 @@ const debugFilter = winston.format((info, opts) => {
 const logConfiguration = {
     level: process.env.LOG_LEVEL || 'info',
     format: combine(timestamp(), json()),
-    defaultMeta: { service: 'user-service' },
+    defaultMeta: { service: 'Logging-service' },
     transports: [
         new winston.transports.Console({}),
         new winston.transports.File({ 
