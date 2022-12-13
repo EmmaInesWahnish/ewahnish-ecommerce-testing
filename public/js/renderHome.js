@@ -87,10 +87,10 @@ const renderHome = () => {
                         }, 1000)
                     }
                 }
-                let chat = LocalStorageService.getItem("chat")
+                /*let chat = LocalStorageService.getItem("chat")
                 if (chat === 0) {
                     renderProducts()
-                }
+                }*/
 
             }
             else {

@@ -7,6 +7,7 @@ export const sessionRegister = async (req, res) => {
 }
 
 export const sessionRegisterFail = async (req, res) => {
+    console.log("Register failed");
     res.status(500).send({ status: "error", error: "Register failed" })
     req.logger.warn('Intento de registro fallido')
 }
@@ -23,7 +24,8 @@ export const sessionLogin = async (req, res) => {
         id: req.user._id
     };
     const body = { id: req.user.id };
-    const token = jwt.sign({ user: body }, 
+    const token = jwt.sign({ 
+        user: body }, 
         config.server.JWT.SECRET_KEY,
         {expiresIn:config.expires_in});
 
@@ -34,11 +36,13 @@ export const sessionLogin = async (req, res) => {
     let payload = {
         token: decodedToken, session: req.session.user
     }
+    console.log(payload);
 
     res.status(200).send({ status: "success", payload: req.session.user, data: token })
 }
 
 export const sessionLoginFail = (req, res) => {
+    console.log("login failed");
     res.status(500).send({ status: "error", error: "Login failed" })
     req.logger.warn('Intento de login fallido');
 }

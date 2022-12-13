@@ -22,7 +22,6 @@ let noNewProduct = {
     isNew: false
 }
 
-
 //element.parentNode.removeChild(element);
 const renderProducts = async () => {
 
@@ -41,7 +40,7 @@ const renderProducts = async () => {
     let cartId = '';
     let this_user;
     let theValue;
-    let idProducts = [];
+    let idProducts = [{}];
     let isAdmin = 'true';
 
     document.getElementById('activeCart').innerHTML = "";
@@ -98,7 +97,7 @@ const renderProducts = async () => {
             idProducts = JSON.parse(localStorage.getItem('cart'))
 
             document.getElementById('productCards').innerHTML = "";
-            
+
             LocalStorageService.setItem("chat", 1);
 
             const cardContainer = document.getElementById('productCards')
@@ -137,13 +136,6 @@ const renderProducts = async () => {
 
                 if (isAdmin === 'true') {
                     let i = findQobject(qobject, product.id);
-
-                    for (let j = 0; j < idProducts.length; j++) {
-                        if (idProducts[j].id === product.id) {
-                            theValue = Number(idProducts[j].cantidad);
-                            qobject[i].value = theValue;
-                        }
-                    }
 
                     buttons.innerHTML = `<div class="flex-container-button-group card-footer">
                                         <button style="width:200px" 
@@ -186,11 +178,12 @@ const renderProducts = async () => {
 
                 } else {
                     let i = findQobject(qobject, product.id);
-
-                    for (let j = 0; j < idProducts.length; j++) {
-                        if (idProducts[j].id === product.id) {
-                            theValue = Number(idProducts[j].cantidad);
-                            qobject[i].value = theValue;
+                    if (idProducts != null) {
+                        for (let j = 0; j < idProducts.length; j++) {
+                            if (idProducts[j].id === product.id) {
+                                theValue = Number(idProducts[j].cantidad);
+                                qobject[i].value = theValue;
+                            }
                         }
                     }
 

@@ -169,8 +169,13 @@ emptyACart.addEventListener('click', () => {
 
 function signOut() {
     document.getElementById('the-avatar').innerHTML = ``;
-    document.getElementById('welcome').innerHTML = ``;   
-    const loginRoute = '/api/sessions/logout'
+    document.getElementById('welcome').innerHTML = ``;
+    LocalStorageService.removeItem("token");
+    LocalStorageService.removeItem("whichUser");
+    LocalStorageService.removeItem("isAdmin");
+    LocalStorageService.removeItem("ls_cart");
+    LocalStorageService.removeItem("cart");   
+    const loginRoute = '/api/sessions/logout';
     let theStatus;
     fetch(loginRoute)
         .then(result => result.json())

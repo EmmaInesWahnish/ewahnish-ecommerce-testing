@@ -6,7 +6,7 @@ import { LocalStorageService } from './localStorageService.js';
 import renderModalUploadFile from './renderModalUploadFile.js';
 
 const renderLoginForm = () => {
-    LocalStorageService.setItem("chat",0);
+    LocalStorageService.setItem("chat", 0);
     document.getElementById('activeCart').innerHTML = "";
     document.getElementById('cartNumber').innerHTML = "";
     document.getElementById('productCards').innerHTML = "";
@@ -71,6 +71,17 @@ const renderLoginForm = () => {
 
     let newUser = LocalStorageService.getItem("newUser");
 
+    if (newUser === null) {
+        let newUser = {
+            isNew: false,
+            user_email: '',
+            needAvatar: false
+        }
+        LocalStorageService.setItem("newUser", newUser)
+    }
+    
+    newUser = LocalStorageService.getItem("newUser");
+
     form.addEventListener('submit', evt => {
         evt.preventDefault();
         let data = new FormData(form);
@@ -111,7 +122,7 @@ const renderLoginForm = () => {
                             needAvatar: "recover"
                         }
                         LocalStorageService.setItem("newUser", newUser);
-                        try{
+                        try {
                             await renderModalUploadFile('picture');
                         }
                         catch (error) {
