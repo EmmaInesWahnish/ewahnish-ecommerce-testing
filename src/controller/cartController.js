@@ -117,7 +117,6 @@ export const cartsUpdateOne = async (req, res) => {
         let productArray = [];
         carts = await getAllCarts();
         indexc = carts.findIndex(element => element.id == id);
-        console.log("Entra al primer try ", indexc)
         if (indexc !== -1) {
             searchedCart = carts[indexc];
             let cartId = searchedCart.id;
@@ -134,7 +133,6 @@ export const cartsUpdateOne = async (req, res) => {
                 productArray[indexp].cantidad = receive.cantidad;
             }
             else {
-                console.log("recibo ", receive)
                 productArray.push(receive);
                 modifiedCart = {
                     id: cartId,

@@ -35,10 +35,10 @@ const time_to_live = config.server.TIME_TO_LIVE;
 if (modeCluster === 'CLUSTER' && cluster.isPrimary) {
     const numCPUs = cpus().length
 
-    ilogger.info(`Número de procesadores: ${numCPUs}`)
-    ilogger.info(`PID MASTER ${process.pid}`)
+    let activeCPUs = (numCPUs < 2)?numCPUs:2
 
-    for (let i = 0; i < numCPUs; i++) {
+
+    for (let i = 0; i < activeCPUs; i++) {
         cluster.fork()
     }
 
@@ -93,7 +93,7 @@ else {
 
     app.use(
         '/api/productos',
-        passport.authenticate("jwt", { session: false }),
+        //passport.authenticate("jwt", { session: false }),
         routerProducts);
     app.use(
         '/api/carrito',

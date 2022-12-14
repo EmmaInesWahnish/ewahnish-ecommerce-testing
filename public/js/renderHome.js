@@ -64,7 +64,6 @@ const renderHome = () => {
                 document.getElementById('welcome').innerHTML = `Te damos la bienvenida ${session.user.name}! 👋 <p>${user_message}</p>`;
                 document.getElementById('email').value = session.user.email;
                 document.getElementById('name').value = session.user.name;
-                document.getElementById('phone').value = session.user.phone;
                 document.getElementById('avatar').value = session.user.avatar;
                 avatar = session.user.avatar;
                 user_avatar = document.getElementById('user_avatar').value;
@@ -87,6 +86,10 @@ const renderHome = () => {
                         }, 1000)
                     }
                 }
+        let chat = LocalStorageService.getItem("chat")
+        if (chat == 0){
+            setTimeout(renderProducts(), 5000)
+        }
 
             }
             else {
@@ -94,10 +97,7 @@ const renderHome = () => {
             }
         })
         .catch(err => console.log(err))
-        /*let chat = LocalStorageService.getItem("chat")
-        if (chat === 0){
-            setTimeout(renderProducts(), 5000)
-        }*/
+
 }
 
 export default renderHome;

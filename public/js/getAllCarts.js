@@ -1,14 +1,15 @@
 import getUserCart from "./getUserCart.js";
 import build_header from "./getHeader.js";
 
-let headers_object = build_header();
-
-const requestOptionsGet = {
-    method: 'GET',
-    headers: headers_object
-}
 
 const getAllCarts = async () => {
+    
+    let headers_object = build_header();
+
+    const requestOptionsGet = {
+        method: 'GET',
+        headers: headers_object
+    }
 
     const cartRoute = `/api/carrito`
 
@@ -20,12 +21,12 @@ const getAllCarts = async () => {
         .then(res => res.json())
         .then(data => {
             if (data.carrito !== undefined) {
-                allCarts = [...data.carrito];                
+                allCarts = [...data.carrito];
             }
             cart_number = getUserCart(allCarts);
             return cart_number;
         })
-        .catch (err => console.log(err))
+        .catch(err => console.log(err))
 
 }
 

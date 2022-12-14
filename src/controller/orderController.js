@@ -38,7 +38,6 @@ export const ordersGetOneById = async (req, res) => {
     let user_phone = req.session.user.phone;
     try {
         const order = await getOrdersById(id);
-        console.log("Order ", order)
         if (order != undefined) {
             res.json({
                 message: 'orden encontrada',
