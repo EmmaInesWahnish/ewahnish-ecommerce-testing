@@ -13,17 +13,17 @@ import build_header from './getHeader.js';
 import { LocalStorageService } from './localStorageService.js';
 import getAndModifyOneProduct from './getAndModifyOneProduct.js';
 
-let array = [];
-
-const headers_object = build_header();
-
-let noNewProduct = {
-    product_id: 0,
-    isNew: false
-}
 
 //element.parentNode.removeChild(element);
 const renderProducts = async () => {
+    let array = [];
+
+    const headers_object = build_header();
+
+    let noNewProduct = {
+        product_id: 0,
+        isNew: false
+    }
 
     let newProduct = LocalStorageService.getItem("newProduct");
 
@@ -40,7 +40,7 @@ const renderProducts = async () => {
     let cartId = '';
     let this_user;
     let theValue;
-    let idProducts = [{}];
+    let idProducts = [];
     let isAdmin = 'true';
 
     document.getElementById('activeCart').innerHTML = "";
@@ -95,6 +95,8 @@ const renderProducts = async () => {
             document.getElementById('myCart').innerText = cartId;
 
             idProducts = JSON.parse(localStorage.getItem('cart'))
+
+            if(idProducts === null){idProducts = []}
 
             document.getElementById('productCards').innerHTML = "";
 
@@ -178,14 +180,14 @@ const renderProducts = async () => {
 
                 } else {
                     let i = findQobject(qobject, product.id);
-                    if (idProducts != null) {
+                    //if (idProducts != null) {
                         for (let j = 0; j < idProducts.length; j++) {
                             if (idProducts[j].id === product.id) {
                                 theValue = Number(idProducts[j].cantidad);
                                 qobject[i].value = theValue;
                             }
                         }
-                    }
+                    //}
 
                     let quantity = qobject[i].value;
 

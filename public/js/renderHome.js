@@ -30,9 +30,9 @@ const renderHome = () => {
 
     let avatar = '';
 
-    let user_avatar = '/uploads/generic-avatar.jpg';
+    let user_message = '';
 
-    let user_message = 'Si desea personalizar su avatar puede utilizar Upload Avatar en la barra de menu'
+    let user_avatar = '/uploads/generic-avatar.jpg';
 
     let show = function (elem) {
         elem.style.display = 'block';
@@ -87,10 +87,6 @@ const renderHome = () => {
                         }, 1000)
                     }
                 }
-                /*let chat = LocalStorageService.getItem("chat")
-                if (chat === 0) {
-                    renderProducts()
-                }*/
 
             }
             else {
@@ -98,7 +94,10 @@ const renderHome = () => {
             }
         })
         .catch(err => console.log(err))
-
+        /*let chat = LocalStorageService.getItem("chat")
+        if (chat === 0){
+            setTimeout(renderProducts(), 5000)
+        }*/
 }
 
 export default renderHome;

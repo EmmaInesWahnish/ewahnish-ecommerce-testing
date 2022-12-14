@@ -7,7 +7,7 @@ process.argv.forEach((value, index)=>{
 })
 
 const env = async () => {
-    let result = await axios.get(`http://localhost:8080/api/productos/${parameters[2]}`,{ withCredentials: true });
+    let result = await axios.get(`http://localhost:8080/api/productos/${parameters[2]}`,`{ withCredentials: true }`);
     console.log(result.status);
     console.log(result.data)
 };
