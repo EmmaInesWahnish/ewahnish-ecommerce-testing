@@ -64,7 +64,6 @@ class AnyContainer {
             if (whichId !== -1) {
                 let removedObject = [];
                 removedObject = elements.splice(whichId, 1);
-                console.log("Deleted item ", removedObject);
                 await fs.promises.writeFile(this.anyFile, JSON.stringify(elements, null, 3))
                 return removedObject;    
             } else {
@@ -77,7 +76,6 @@ class AnyContainer {
     }
 
     async modifyById(id, item) {
-        console.log("Llegaron ",id," ",item)
         try {
             const elements = await this.getAll()
 
@@ -85,7 +83,6 @@ class AnyContainer {
 
             if (whichId !== -1) {
                 let modifiedObject = elements.splice(whichId, 1, item);
-                console.log("Modified item ", modifiedObject);
                 await fs.promises.writeFile(this.anyFile, JSON.stringify(elements, null, 3))
                 return modifiedObject;    
             } else {
@@ -113,7 +110,6 @@ class AnyContainer {
 
             if (whichId !== -1) {
                 let modifiedObject = elements.splice(whichId, 1, modifiedCart);
-                console.log("item eliminado ", modifiedObject)
                 await fs.promises.writeFile(this.anyFile, JSON.stringify(elements, null, 3))
                 return modifiedObject;    
             } else {
@@ -139,7 +135,6 @@ class AnyContainer {
          try {
             const elements = await this.getAll();
             if(elements.length > 0) {id = elements[elements.length - 1].id;}
-            console.log(id);
             array.forEach(function (element) {
                 id = id + 1;
                 element.id = id
@@ -155,7 +150,6 @@ class AnyContainer {
         catch (error) {
             console.log(error)
             const elements = [];
-            console.log(id);
             array.forEach(function (element) {
                 id = id + 1;
                 element.id = id

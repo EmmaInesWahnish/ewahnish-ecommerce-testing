@@ -93,11 +93,11 @@ else {
 
     app.use(
         '/api/productos',
-        //passport.authenticate("jwt", { session: false }),
+        passport.authenticate("jwt", { session: true }),
         routerProducts);
     app.use(
         '/api/carrito',
-        passport.authenticate("jwt", { session: false }),
+        passport.authenticate("jwt", { session: true }),
         routerCart);
     app.use('/api/up', uploadRouter);
     app.use('/api/auxiliar', auxiliarRouter);
@@ -105,7 +105,7 @@ else {
     app.use('/api/sessions', sessionRouter);
     app.use(
         '/api/ordenes',
-        passport.authenticate('jwt', { session: false }),
+        passport.authenticate("jwt", { session: true }),
         routerOrder);
 
     app.all('*', (req, res) => {

@@ -202,7 +202,6 @@ const renderCarts = (cartNumber) => {
                     user_cart: cartNumber
                 }
 
-                console.log("This is how cart remains >>> ", cart)
                 const cartFooter = document.createElement('div')
 
                 cartFooter.innerHTML = `<div class="form-group">

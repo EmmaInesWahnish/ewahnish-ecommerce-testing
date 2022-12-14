@@ -117,12 +117,8 @@ class MariaDbContainer {
     }
     
     async deleteProdById(id, id_prod, indexp, productArray) {
-        console.log("The id ", id)
-        console.log("Id_prod ", id_prod)
         try {
             const element = await this.getById(id)
-
-            console.log(element)
 
             const timestamp = element[0].timestamp;
 

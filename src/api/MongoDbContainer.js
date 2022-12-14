@@ -36,7 +36,6 @@ class MongoDbContainer {
             try {
                 const items = await this.TheModel.find({}).sort({_id: -1}).limit(1);
                 const theProductId = items[0]._id;
-                console.log("In mongodb container id ", theProductId)
                 return theProductId              
             }
             catch(e) {
@@ -121,12 +120,8 @@ class MongoDbContainer {
     }
 
     async deleteProdById(id, id_prod, indexp, productArray) {
-        console.log("I get here  ", id)
-        console.log("Id_prod ", id_prod)
         try {
             const element = await this.getById(id)
-
-            console.log(element)
 
             const timestamp = element[0].timestamp;
 
